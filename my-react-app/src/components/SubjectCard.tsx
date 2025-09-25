@@ -55,7 +55,7 @@ export const SubjectCard = ({ subject, onVote, userVotes }: SubjectCardProps) =>
         <div className="mt-4">
           <div className="flex flex-col gap-3 items-center">
             <p className="text-sm text-white/80 font-medium">
-              {hasVoted ? 'Your rating:' : 'Rate this subject:'}
+              {hasVoted ? `Your rating: ${userRating}/5` : 'Rate this subject:'}
             </p>
             <StarRating
               initialRating={userRating}

@@ -64,6 +64,25 @@ body {
   }
 }
 
+/* Gold star animation */
+@keyframes starGlow {
+  0% {
+    filter: drop-shadow(0 0 3px rgba(251, 191, 36, 0.6));
+  }
+  50% {
+    filter: drop-shadow(0 0 8px rgba(251, 191, 36, 0.9));
+  }
+  100% {
+    filter: drop-shadow(0 0 3px rgba(251, 191, 36, 0.6));
+  }
+}
+
 .star-animation {
   animation: starPulse 2s ease-in-out infinite;
+}
+
+.gold-star {
+  color: #f59e0b; /* Amber-500 - more gold-like color */
+  text-shadow: 0 0 10px rgba(245, 158, 11, 0.8);
+  animation: starGlow 3s ease-in-out infinite alternate;
 }

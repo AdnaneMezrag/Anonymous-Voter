@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 interface StarRatingProps {
   initialRating?: number;
@@ -15,6 +15,11 @@ export const StarRating = ({
 }: StarRatingProps) => {
   const [hoverRating, setHoverRating] = useState(0);
   const [selectedRating, setSelectedRating] = useState(initialRating);
+
+  // Ensure selected rating updates when initialRating changes (after voting)
+  useEffect(() => {
+    setSelectedRating(initialRating);
+  }, [initialRating]);
 
   const handleMouseOver = (rating: number) => {
     if (disabled) return;
@@ -42,8 +47,8 @@ export const StarRating = ({
             type="button"
             key={`star-${i}`}
             className={`text-3xl transition-all duration-300 ${
-              filled ? 'text-yellow-300 drop-shadow-[0_0_8px_rgba(253,224,71,0.7)] transform scale-110 star-animation' : 'text-white/40'
-            } ${disabled ? 'opacity-80 cursor-not-allowed' : 'cursor-pointer hover:transform hover:scale-125'}`}
+              filled ? 'gold-star transform scale-110' : 'text-white/40'
+            } ${disabled ? 'opacity-100 cursor-not-allowed' : 'cursor-pointer hover:transform hover:scale-125'}`}
             onMouseOver={() => handleMouseOver(ratingValue)}
             onMouseLeave={handleMouseLeave}
             onClick={() => handleClick(ratingValue)}
