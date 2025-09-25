@@ -1,0 +1,22 @@
+{
+  "name": "Subject Coolness Meter",
+  "short_name": "Coolness Meter",
+  "description": "Rate university subjects by their coolness factor",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0c0129",
+  "theme_color": "#6B46C1",
+  "icons": [
+    {
+      "src": "/coolness-favicon.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon-32x32.svg",
+      "sizes": "32x32",
+      "type": "image/svg+xml"
+    }
+  ]
+}
