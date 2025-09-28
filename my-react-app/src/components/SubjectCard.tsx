@@ -41,7 +41,20 @@ export const SubjectCard = ({ subject, onVote, userVotes }: SubjectCardProps) =>
       </div>
       
       <div className="p-6 relative z-0 flex-grow">
-        <h3 className="text-2xl font-bold text-white mb-4 text-center">{subject.name}</h3>
+        <div className="flex items-center justify-center gap-3 mb-4">
+          {subject.image && (
+            <span className="text-4xl" role="img" aria-label={subject.name}>
+              {subject.image}
+            </span>
+          )}
+          <h3 className="text-2xl font-bold text-white text-center">{subject.name}</h3>
+        </div>
+        
+        {subject.description && (
+          <p className="text-sm text-white/80 text-center mb-4 italic">
+            {subject.description}
+          </p>
+        )}
         
         <div className="flex items-center justify-between mb-5">
           <div className="text-sm font-medium text-white/70">

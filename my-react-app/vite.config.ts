@@ -4,12 +4,9 @@ import tailwindcss from '@tailwindcss/vite'
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [
-    react({
-      babel: {
-        plugins: [['babel-plugin-react-compiler']],
-      },
-    }),
-    tailwindcss(),
-  ],
+  plugins: [react(), tailwindcss()],
+  server: {
+    host: '0.0.0.0', // Accept connections from any IP
+    port: 5174
+  }
 })
